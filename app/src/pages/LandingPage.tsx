@@ -504,7 +504,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
         </section>
 
         {/* Projects Section */}
-        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-prompt">
+        <section className="w-full max-w-7xl px-6 pb-20 relative z-10 font-prompt" style={{ backgroundColor: 'var(--bg-color)' }}>
           <div className="space-y-6">
             <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
               // 04. Selected Work
@@ -580,7 +580,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
         </section>
 
         {/* Decorative footer details */}
-        <footer className="w-full py-8 text-center font-prompt text-[9px] text-[#4e6b54] tracking-widest uppercase border-t border-[var(--accent-color)] select-none" style={{ backgroundColor: 'var(--bg-color)' }}>
+        <footer className="w-full py-8 text-center font-prompt text-[9px] text-[#4e6b54] tracking-widest uppercase border-t border-[var(--accent-color)] select-none relative z-10" style={{ backgroundColor: 'var(--bg-color)' }}>
           Mizan Ghodafail // Distributed Intelligence Network v0.0.1
         </footer>
       </div>
