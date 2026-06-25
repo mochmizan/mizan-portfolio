@@ -188,7 +188,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
           end: "+=300%",
           scrub: 1,
           pin: true,
-          pinSpacing: true,
+          pinSpacing: false,
           onUpdate: (self) => {
             if (self.progress >= 0.95) {
               gsap.set(".cards-trigger-container", {
@@ -502,6 +502,9 @@ export function LandingPage({ onEnter }: LandingPageProps) {
             </ul>
           </div>
         </section>
+
+        {/* Pinned Scroll Spacer (Compensates for 300vh pin duration minus 100vh section height) */}
+        <div className="w-full h-[200vh] pointer-events-none" />
 
         {/* Projects Section */}
         <section className="w-full max-w-7xl px-6 pb-20 relative z-10 font-prompt" style={{ backgroundColor: 'var(--bg-color)' }}>
