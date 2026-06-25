@@ -200,6 +200,10 @@ export function LandingPage({ onEnter }: LandingPageProps) {
               });
             } else {
               gsap.set(".cards-trigger-container", {
+                position: "",
+                top: "",
+                left: "",
+                width: "",
                 zIndex: 10,
               });
             }
