@@ -26,8 +26,12 @@
 
     --btn-color: var(--accent-color);
     --label-color: var(--accent-color);
-    --transition-speed: 0.25s;
+    --transition-speed: 0.2s;
     --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Premium Design Engineering Curves */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   * {
@@ -49,6 +53,14 @@
 }
 
 @layer components {
+  /* Helper transition classes */
+  .ease-out-expo {
+    transition-timing-function: var(--ease-out-expo) !important;
+  }
+  .ease-back-out {
+    transition-timing-function: var(--ease-back-out) !important;
+  }
+
   .psyche-btn {
     border-width: 2px;
     border-style: solid;
@@ -62,7 +74,10 @@
     background-color: transparent;
     color: var(--btn-color);
     /* Target specific properties for performance transition compliance */
-    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s var(--ease-out-expo), 
+                border-color 0.15s var(--ease-out-expo), 
+                color 0.15s var(--ease-out-expo),
+                transform 0.1s var(--ease-out-expo);
     cursor: pointer;
   }
 
@@ -71,17 +86,25 @@
     color: var(--bg-color);
   }
 
+  .psyche-btn:active {
+    transform: scale(0.96);
+  }
+
   .psyche-card {
     border-width: 1px;
     padding: 1rem;
     border-color: var(--panel-border-color);
     background-color: var(--panel-bg);
     /* Target specific properties to prevent transition: all */
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s var(--ease-out-expo), box-shadow 0.15s var(--ease-out-expo);
   }
 
   .psyche-card:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .psyche-card:active {
+    transform: scale(0.99);
   }
 
   .profile-image-placeholder {
@@ -94,13 +117,16 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    transition: transform var(--transition-speed) var(--ease-out);
+    transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s var(--ease-out-expo);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .profile-image-placeholder:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 15px var(--border-muted);
+    }
+    .profile-image-placeholder:active {
+      transform: translateY(0) scale(0.98);
     }
   }
 
@@ -124,13 +150,35 @@
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%) contrast(120%);
-    transition: filter var(--transition-speed) var(--ease-out);
+    transition: filter 0.2s var(--ease-out-expo);
   }
 
   @media (hover: hover) and (pointer: fine) {
     .profile-image-placeholder:hover .profile-image-actual {
       filter: grayscale(0%) contrast(100%);
     }
+  }
+
+  /* Showcase Card Interactions */
+  .showcase-card {
+    transition: border-color 0.2s var(--ease-out-expo), 
+                transform 0.2s var(--ease-out-expo), 
+                filter 0.2s var(--ease-out-expo);
+  }
+
+  .showcase-card:active {
+    transform: scale(0.995);
+  }
+
+  .showcase-card-details {
+    transform: translateY(8px);
+    opacity: 0.85;
+    transition: transform 0.25s var(--ease-out-expo), opacity 0.25s var(--ease-out-expo);
+  }
+
+  .showcase-card:hover .showcase-card-details {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

@@ -465,26 +465,26 @@ export function LandingPage() {
         }
       });
 
-      tl.to(".showcase-card-0", {
+      tl.to(".showcase-card-wrapper-0", {
         yPercent: -105,
         opacity: 0,
         ease: "power1.inOut"
       }, 0)
-      .to(".showcase-card-1", {
+      .to(".showcase-card-wrapper-1", {
         y: 0,
         ease: "power1.inOut"
       }, 0)
-      .to(".showcase-card-2", {
+      .to(".showcase-card-wrapper-2", {
         y: 20,
         ease: "power1.inOut"
       }, 0);
 
-      tl.to(".showcase-card-1", {
+      tl.to(".showcase-card-wrapper-1", {
         yPercent: -105,
         opacity: 0,
         ease: "power1.inOut"
       }, 0.5)
-      .to(".showcase-card-2", {
+      .to(".showcase-card-wrapper-2", {
         y: 0,
         ease: "power1.inOut"
       }, 0.5);
@@ -679,60 +679,64 @@ export function LandingPage() {
               {projects.map((project, idx) => (
                 <li 
                   key={idx}
-                  className={`showcase-card showcase-card-${idx} absolute top-0 left-0 w-full h-full border border-[var(--panel-border-color)] hover:border-[var(--accent-color)] transition-[border-color,transform] duration-500 rounded-none bg-cover bg-center grayscale hover:grayscale-0 flex flex-col justify-end`}
+                  className={`showcase-card-wrapper showcase-card-wrapper-${idx} absolute top-0 left-0 w-full h-full`}
                   style={{ 
-                    backgroundImage: `url(${project.image})`,
                     zIndex: 10 + (projects.length - idx),
                     transform: `translateY(${idx * 20}px)`
                   }}
                 >
-                  <div className="absolute inset-0 bg-black/60 transition-colors duration-300 pointer-events-none z-0" />
-                  
-                  <div 
-                    className="absolute inset-0 pointer-events-none z-10" 
-                    style={{
-                      background: 'repeating-linear-gradient(rgba(18, 16, 16, 0) 0px, rgba(18, 16, 16, 0) 1px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 3px)',
-                      mixBlendMode: 'overlay'
-                    }}
-                  />
-                  <div className="relative flex flex-col justify-between items-start z-20 h-full p-8 text-white select-none w-full">
-                    <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-mono text-white tracking-normal font-bold">
-                      <span>{idx === 0 ? "AI & Fullstack Developer" : idx === 1 ? "Frontend Developer" : "Solo Developer"}</span>
-                      <span className="font-normal">{idx === 0 ? "Jan 2026 - Feb 2026" : idx === 1 ? "Nov 2025 - Dec 2025" : "May 2024 - June 2024"}</span>
-                    </div>
-
-                    <div className="flex flex-col w-full gap-2 mt-auto">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
-                        <h4 className="font-mono font-bold text-[24px] max-lg:text-[18px] tracking-tight leading-tight text-white">
-                          {project.title}
-                        </h4>
-                        {project.url && (
-                          <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="psyche-btn text-xs font-bold px-4 py-1.5 tracking-wider self-start sm:self-auto font-mono"
-                          >
-                            View Project &rarr;
-                          </a>
-                        )}
+                  <div
+                    className="showcase-card w-full h-full border border-[var(--panel-border-color)] hover:border-[var(--accent-color)] rounded-none bg-cover bg-center grayscale hover:grayscale-0 flex flex-col justify-end relative cursor-pointer overflow-hidden"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-black/60 transition-colors duration-300 pointer-events-none z-0" />
+                    
+                    <div 
+                      className="absolute inset-0 pointer-events-none z-10" 
+                      style={{
+                        background: 'repeating-linear-gradient(rgba(18, 16, 16, 0) 0px, rgba(18, 16, 16, 0) 1px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 3px)',
+                        mixBlendMode: 'overlay'
+                      }}
+                    />
+                    <div className="relative flex flex-col justify-between items-start z-20 h-full p-8 text-white select-none w-full">
+                      <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-mono text-white tracking-normal font-bold">
+                        <span>{idx === 0 ? "AI & Fullstack Developer" : idx === 1 ? "Frontend Developer" : "Solo Developer"}</span>
+                        <span className="font-normal">{idx === 0 ? "Jan 2026 - Feb 2026" : idx === 1 ? "Nov 2025 - Dec 2025" : "May 2024 - June 2024"}</span>
                       </div>
 
-                      <p className="text-[15px] max-lg:text-[14px] text-gray-300 font-light leading-relaxed max-w-3xl text-justify font-mono">
-                        {project.description}
-                      </p>
+                      <div className="showcase-card-details flex flex-col w-full gap-2 mt-auto">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
+                          <h4 className="font-mono font-bold text-[24px] max-lg:text-[18px] tracking-tight leading-tight text-white">
+                            {project.title}
+                          </h4>
+                          {project.url && (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="psyche-btn text-xs font-bold px-4 py-1.5 tracking-wider self-start sm:self-auto font-mono"
+                            >
+                              View Project &rarr;
+                            </a>
+                          )}
+                        </div>
 
-                      <hr className="w-full border-t border-[var(--border-muted)] opacity-50 my-1" />
+                        <p className="text-[15px] max-lg:text-[14px] text-gray-300 font-light leading-relaxed max-w-3xl text-justify font-mono">
+                          {project.description}
+                        </p>
 
-                      <div className="flex flex-wrap gap-1.5 font-mono">
-                        {project.tags.map((tag, tagIdx) => (
-                          <span 
-                            key={tagIdx}
-                            className="px-2 py-0.5 text-[16px] max-lg:text-[10px] font-bold tracking-wider bg-[var(--panel-bg-darker)] text-[var(--accent-color)] border border-[var(--border-muted)]"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                        <hr className="w-full border-t border-[var(--border-muted)] opacity-50 my-1" />
+
+                        <div className="flex flex-wrap gap-1.5 font-mono">
+                          {project.tags.map((tag, tagIdx) => (
+                            <span 
+                              key={tagIdx}
+                              className="px-2 py-0.5 text-[16px] max-lg:text-[10px] font-bold tracking-wider bg-[var(--panel-bg-darker)] text-[var(--accent-color)] border border-[var(--border-muted)]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -924,7 +928,7 @@ export function LandingPage() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="LinkedIn"
-                className="transition-transform duration-300 hover:scale-110"
+                className="transition-transform duration-200 ease-out-expo hover:scale-105 active:scale-95"
                 style={{ color: 'var(--accent-color)' }}
               >
                 <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -936,7 +940,7 @@ export function LandingPage() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="GitHub"
-                className="transition-transform duration-300 hover:scale-110"
+                className="transition-transform duration-200 ease-out-expo hover:scale-105 active:scale-95"
                 style={{ color: 'var(--accent-color)' }}
               >
                 <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
