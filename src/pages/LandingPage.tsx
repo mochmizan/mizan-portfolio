@@ -109,8 +109,9 @@ interface Certification {
   title: string;
   issuer: string;
   issueDate: string;
-  expiryDate: string;
-  credentialId: string;
+  expiryDate?: string;
+  credentialId?: string;
+  logo: string;
   url: string;
 }
 
@@ -121,6 +122,7 @@ const certifications: Certification[] = [
     issueDate: 'May 2026',
     expiryDate: 'May 2029',
     credentialId: 'JMZVOJ723XN9',
+    logo: '/images/dicoding.webp',
     url: '#'
   },
   {
@@ -129,6 +131,7 @@ const certifications: Certification[] = [
     issueDate: 'May 2026',
     expiryDate: 'May 2029',
     credentialId: 'KEXLQJ64WPG2',
+    logo: '/images/dicoding.webp',
     url: '#'
   },
   {
@@ -137,6 +140,7 @@ const certifications: Certification[] = [
     issueDate: 'Apr 2026',
     expiryDate: 'Apr 2029',
     credentialId: '1RXYW1JEKZVM',
+    logo: '/images/dicoding.webp',
     url: '#'
   },
   {
@@ -145,6 +149,97 @@ const certifications: Certification[] = [
     issueDate: 'Feb 2026',
     expiryDate: 'Feb 2029',
     credentialId: '81P25E93NPOY',
+    logo: '/images/dicoding.webp',
+    url: '#'
+  },
+  {
+    title: 'Career Management Essentials',
+    issuer: 'IBM',
+    issueDate: 'Dec 2025',
+    logo: '/images/ibm.webp',
+    url: '#'
+  },
+  {
+    title: 'Memulai Pemrograman dengan Python',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'Nov 2025',
+    expiryDate: 'Nov 2028',
+    credentialId: '4EXG313VDZRL',
+    logo: '/images/dicoding.webp',
+    url: '#'
+  },
+  {
+    title: 'Belajar Dasar AI',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'Oct 2025',
+    expiryDate: 'Oct 2028',
+    credentialId: 'KEXL228G0ZG2',
+    logo: '/images/dicoding.webp',
+    url: '#'
+  },
+  {
+    title: 'CCNA: Switching, Routing, and Wireless Essentials',
+    issuer: 'Cisco',
+    issueDate: 'Jul 2025',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'English for IT 2',
+    issuer: 'Cisco',
+    issueDate: 'Jun 2025',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'Digital Awareness',
+    issuer: 'Cisco',
+    issueDate: 'Apr 2025',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'Python Data Fundamentals',
+    issuer: 'DataCamp',
+    issueDate: 'Jan 2025',
+    expiryDate: 'Jan 2027',
+    credentialId: '930e1741d713e671385577a6fca9831cfee6f402',
+    logo: '/images/datacamp.webp',
+    url: '#'
+  },
+  {
+    title: 'CCNA: Introduction to Networks',
+    issuer: 'Cisco',
+    issueDate: 'Dec 2024',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'Creating Compelling Reports',
+    issuer: 'Cisco',
+    issueDate: 'Dec 2024',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'Python Essentials 1',
+    issuer: 'Cisco',
+    issueDate: 'Dec 2024',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'English for IT 1',
+    issuer: 'Cisco',
+    issueDate: 'Oct 2024',
+    logo: '/images/cisco.webp',
+    url: '#'
+  },
+  {
+    title: 'Computer Hardware Basics',
+    issuer: 'Cisco',
+    issueDate: 'Sep 2024',
+    logo: '/images/cisco.webp',
     url: '#'
   }
 ];
@@ -788,8 +883,8 @@ export function LandingPage() {
                     className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 overflow-hidden relative bg-neutral-900 flex items-center justify-center"
                   >
                     <img 
-                      src="/images/dicoding_logo.jpg" 
-                      alt="Dicoding Indonesia Logo" 
+                      src={cert.logo} 
+                      alt={`${cert.issuer} Logo`} 
                       width={56}
                       height={56}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -804,8 +899,11 @@ export function LandingPage() {
                       {cert.issuer}
                     </p>
                     <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 w-full">
-                      <span>Cred ID {cert.credentialId}</span>
-                      <span>{cert.issueDate}</span>
+                      <span>{cert.credentialId ? `Cred ID ${cert.credentialId}` : ''}</span>
+                      <span>
+                        Issued {cert.issueDate}
+                        {cert.expiryDate ? ` · Expires ${cert.expiryDate}` : ''}
+                      </span>
                     </div>
                   </div>
                 </div>
