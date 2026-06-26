@@ -176,33 +176,26 @@ export function LandingPage({ onEnter }: LandingPageProps) {
   }, [displayedSpecialty, isSpecialtyDeleting, specialtyIndex, specialtyTypingSpeed]);
 
   useEffect(() => {
-    // Enable global scroll normalization to match original smooth feel
-    ScrollTrigger.normalizeScroll(true);
-    ScrollTrigger.config({ ignoreMobileResize: true });
-
     const ctx = gsap.context(() => {
       gsap.timeline({
         scrollTrigger: {
           trigger: ".cards-trigger-container",
           start: "top top",
-          end: "+=300%",
+          end: "+=200%",
           scrub: 1,
           pin: true,
-          pinSpacing: false,
+          pinSpacing: true,
         }
       })
-      .to(".showcase-card", {
-        yPercent: -100,
+      .to(".showcase-card:not(:last-child)", {
+        yPercent: -105,
+        opacity: 0,
         stagger: 0.5,
-        ease: "none"
+        ease: "power1.inOut"
       });
     });
 
-    return () => {
-      ctx.revert();
-      // Disable normalizeScroll when unmounting
-      ScrollTrigger.normalizeScroll(false);
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -362,33 +355,58 @@ export function LandingPage({ onEnter }: LandingPageProps) {
               Skills & Technologies
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-              {stackCategories.map((category, catIdx) => (
-                <div 
-                  key={catIdx}
-                  className="p-6 border flex flex-col gap-4 rounded-none"
-                  style={{ backgroundColor: 'var(--panel-bg)', borderColor: 'var(--panel-border-color)' }}
-                >
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[var(--accent-color)] font-roboto border-b border-[var(--border-muted)] pb-2 text-[16px] font-semibold lg:font-semibold">
-                    {category.title}
-                  </h4>
-                  <div className="flex flex-wrap gap-2.5 font-roboto">
-                    {category.items.map((item, itemIdx) => (
-                      <div 
-                        key={itemIdx}
-                        className="flex items-center gap-2 px-3 py-1.5 bg-[var(--panel-bg-darker)] border border-[var(--border-muted)] hover:border-[var(--accent-color)] transition-colors duration-200"
-                      >
-                        <img 
-                          src={item.icon} 
-                          alt={item.name}
-                          className="w-5 h-5 object-contain"
-                        />
-                        <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
-                      </div>
-                    ))}
+            <div className="w-full flex flex-col md:flex-row md:gap-12 gap-8 justify-start items-start pt-4">
+              {/* Left Column: Programming Languages & Framework and Library */}
+              <div className="w-full md:w-1/2 flex flex-col gap-8">
+                {stackCategories.slice(0, 2).map((category, catIdx) => (
+                  <div key={catIdx} className="flex flex-col gap-3">
+                    <p className="font-roboto text-[16px] font-medium lg:font-semibold text-white mb-1">
+                      {category.title}
+                    </p>
+                    <div className="flex justify-start flex-wrap items-center gap-2 font-roboto">
+                      {category.items.map((item, itemIdx) => (
+                        <div 
+                          key={itemIdx}
+                          className="flex items-center gap-2 px-2 py-1 bg-[var(--panel-bg-darker)] border border-[var(--border-muted)] hover:border-[var(--accent-color)] transition-colors duration-200"
+                        >
+                          <img 
+                            src={item.icon} 
+                            alt={item.name}
+                            className="w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain"
+                          />
+                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Right Column: Animation & Project Management */}
+              <div className="w-full md:w-1/2 flex flex-col gap-8">
+                {stackCategories.slice(2, 4).map((category, catIdx) => (
+                  <div key={catIdx + 2} className="flex flex-col gap-3">
+                    <p className="font-roboto text-[16px] font-medium lg:font-semibold text-white mb-1">
+                      {category.title}
+                    </p>
+                    <div className="flex justify-start flex-wrap items-center gap-2 font-roboto">
+                      {category.items.map((item, itemIdx) => (
+                        <div 
+                          key={itemIdx}
+                          className="flex items-center gap-2 px-2 py-1 bg-[var(--panel-bg-darker)] border border-[var(--border-muted)] hover:border-[var(--accent-color)] transition-colors duration-200"
+                        >
+                          <img 
+                            src={item.icon} 
+                            alt={item.name}
+                            className="w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain"
+                          />
+                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -407,16 +425,14 @@ export function LandingPage({ onEnter }: LandingPageProps) {
 
           {/* Cards Deck (centered in the remaining height) */}
           <div className="flex-1 flex items-center justify-center w-full max-w-4xl mx-auto relative my-4 overflow-hidden">
-            <ul className="relative w-full h-[60vh] md:h-[65vh] list-none p-0">
+            <ul className="relative w-full h-[60vh] md:h-[65vh] list-none p-0 flex items-center justify-center">
               {projects.map((project, idx) => (
                 <li 
                   key={idx}
-                  className="showcase-card absolute left-0 w-full border border-[var(--panel-border-color)] hover:border-[var(--accent-color)] transition-[filter,border-color] duration-300 rounded-none bg-cover bg-center grayscale hover:grayscale-0 flex flex-col justify-end"
+                  className="showcase-card absolute top-0 left-0 w-full h-full border border-[var(--panel-border-color)] hover:border-[var(--accent-color)] transition-all duration-500 rounded-none bg-cover bg-center grayscale hover:grayscale-0 flex flex-col justify-end"
                   style={{ 
                     backgroundImage: `url(${project.image})`,
                     zIndex: 10 + (projects.length - idx), // Lower indexes are on top (RaksaDana on top)
-                    top: `${idx * 2}%`, // Shifts lower cards down slightly so they don't perfectly overlap
-                    height: '85%', // Ensures cards have a height of 85% of the container, leaving room for stack offset
                   }}
                 >
                   {/* Overlay */}
@@ -430,17 +446,16 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                       mixBlendMode: 'overlay'
                     }}
                   />
-
                   {/* Card Body */}
                   <div className="relative flex flex-col justify-between items-start z-20 h-full p-8 text-white select-none w-full">
                     {/* Top row: Role and Duration */}
-                    <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-prompt text-white tracking-wider font-bold">
+                    <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-prompt text-white tracking-normal font-bold">
                       <span>{idx === 0 ? "AI & Fullstack Developer" : idx === 1 ? "Frontend Developer" : "Solo Developer"}</span>
                       <span className="font-normal">{idx === 0 ? "Jan 2026 - Feb 2026" : idx === 1 ? "Nov 2025 - Dec 2025" : "May 2024 - June 2024"}</span>
                     </div>
 
                     {/* Middle/Bottom details */}
-                    <div className="flex flex-col w-full gap-1.5 mt-auto">
+                    <div className="flex flex-col w-full gap-2 mt-auto">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
                         <h4 className="text-[24px] max-lg:text-[18px] font-semibold tracking-tight text-white leading-tight font-prompt font-bold">
                           {project.title}
@@ -450,7 +465,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="psyche-btn text-xs font-bold px-4 py-1.5 uppercase tracking-wider self-start sm:self-auto font-prompt"
+                            className="psyche-btn text-xs font-bold px-4 py-1.5 tracking-wider self-start sm:self-auto font-prompt"
                             style={{ '--btn-color': 'var(--accent-color)' } as React.CSSProperties}
                           >
                             View Project &rarr;
@@ -483,12 +498,9 @@ export function LandingPage({ onEnter }: LandingPageProps) {
           </div>
         </section>
 
-        {/* Pinned Scroll Spacer (Calculated as 300vh scroll trigger duration minus 100vh section height to prevent blank gap) */}
-        <div className="w-full h-[200vh] pointer-events-none" />
-
         {/* Projects Section */}
-        <section className="w-full relative z-20 font-prompt pb-20" style={{ backgroundColor: 'var(--bg-color)' }}>
-          <div className="max-w-7xl mx-auto px-6 space-y-6">
+        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-prompt">
+          <div className="space-y-6">
             <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
               // 04. Selected Work
             </h2>
@@ -528,7 +540,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                     </div>
                     
                     {/* Card Details */}
-                    <div className="p-5 flex flex-col gap-1.5 flex-1 font-prompt">
+                    <div className="p-5 flex flex-col gap-3 flex-1 font-prompt">
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="text-[24px] max-lg:text-[18px] font-semibold text-white leading-snug font-prompt">
                           {project.title}
@@ -541,10 +553,8 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                         {project.description}
                       </p>
                       
-                      <hr className="w-full border-t border-[var(--border-muted)] opacity-50 my-1" />
-
                       {/* Technology tags */}
-                      <div className="flex flex-wrap gap-1.5 pt-0.5 font-prompt">
+                      <div className="flex flex-wrap gap-1.5 pt-2 font-prompt">
                         {project.tags.map((tag, tagIdx) => (
                           <span 
                             key={tagIdx}
@@ -563,7 +573,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
         </section>
 
         {/* Decorative footer details */}
-        <footer className="w-full py-8 text-center font-prompt text-[9px] text-[#4e6b54] tracking-widest uppercase border-t border-[var(--accent-color)] select-none relative z-10" style={{ backgroundColor: 'var(--bg-color)' }}>
+        <footer className="w-full py-8 text-center font-prompt text-[9px] text-[#4e6b54] tracking-widest uppercase border-t border-[var(--accent-color)] select-none" style={{ backgroundColor: 'var(--bg-color)' }}>
           Mizan Ghodafail // Distributed Intelligence Network v0.0.1
         </footer>
       </div>
