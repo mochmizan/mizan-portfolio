@@ -74,7 +74,7 @@ const stackCategories: StackCategory[] = [
       { name: 'FastAPI', icon: 'https://cdn.simpleicons.org/fastapi' },
       { name: 'React', icon: 'https://cdn.simpleicons.org/react' },
       { name: 'Nuxt.js', icon: 'https://cdn.simpleicons.org/nuxt' },
-      { name: 'Pandas', icon: 'https://pandas.pydata.org/static/img/pandas_white.svg' },
+      { name: 'Pandas', icon: '/images/stack/pandas.svg' },
       { name: 'NumPy', icon: 'https://www.svgrepo.com/show/373938/numpy.svg' },
       { name: 'Matplotlib', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
       { name: 'Seaborn', icon: 'https://seaborn.pydata.org/_images/logo-mark-lightbg.svg' },
@@ -554,7 +554,7 @@ export function LandingPage() {
                             alt={item.name}
                             width={32}
                             height={32}
-                            className="w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain"
+                            className={`w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain ${item.name === 'Linux' ? 'brightness-0' : ''}`}
                           />
                           <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-mono">{item.name}</span>
                         </div>
@@ -581,7 +581,7 @@ export function LandingPage() {
                             alt={item.name}
                             width={32}
                             height={32}
-                            className="w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain"
+                            className={`w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain ${item.name === 'Linux' ? 'brightness-0' : ''}`}
                           />
                           <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-mono">{item.name}</span>
                         </div>
