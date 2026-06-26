@@ -157,7 +157,7 @@ const certifications: Certification[] = [
     issuer: 'IBM',
     issueDate: 'Dec 2025',
     logo: '/images/ibm.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/8a4ba2b1-621e-4f2d-b7dc-6b461fddab64'
   },
   {
     title: 'Memulai Pemrograman dengan Python',
@@ -182,21 +182,21 @@ const certifications: Certification[] = [
     issuer: 'Cisco',
     issueDate: 'Jul 2025',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/27bd12b5-87b0-49ac-a7d6-1f78903feeee/linked_in_profile'
   },
   {
     title: 'English for IT 2',
     issuer: 'Cisco',
     issueDate: 'Jun 2025',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/1c877dcc-bd17-4fff-96d8-1ac1e3a15f70/linked_in_profile'
   },
   {
     title: 'Digital Awareness',
     issuer: 'Cisco',
     issueDate: 'Apr 2025',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/5faf79d0-cbde-4464-8882-8107bd44a386/linked_in_profile'
   },
   {
     title: 'Python Data Fundamentals',
@@ -212,35 +212,35 @@ const certifications: Certification[] = [
     issuer: 'Cisco',
     issueDate: 'Dec 2024',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/a609f131-74ef-4442-8dfc-a04fadbb6fc4/linked_in_profile'
   },
   {
     title: 'Creating Compelling Reports',
     issuer: 'Cisco',
     issueDate: 'Dec 2024',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/6e0bbf7a-c24b-4b14-9cc7-c993f9b30812/linked_in_profile'
   },
   {
     title: 'Python Essentials 1',
     issuer: 'Cisco',
     issueDate: 'Dec 2024',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/84597499-6893-48fe-b773-0c6a73bfd46d/linked_in_profile'
   },
   {
     title: 'English for IT 1',
     issuer: 'Cisco',
     issueDate: 'Oct 2024',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/7e04af74-2207-4ab7-8d72-44a31993dfc5/linked_in_profile'
   },
   {
     title: 'Computer Hardware Basics',
     issuer: 'Cisco',
     issueDate: 'Sep 2024',
     logo: '/images/cisco.webp',
-    url: '#'
+    url: 'https://www.credly.com/badges/3c0862ab-e328-417d-9e2d-f37fab411381/linked_in_profile'
   }
 ];
 
@@ -379,7 +379,7 @@ export function LandingPage() {
 
   useEffect(() => {
     const activeRole = roles[roleIndex];
-    
+
     const handleTyping = () => {
       if (!isDeleting) {
         const nextText = activeRole.substring(0, displayedText.length + 1);
@@ -409,7 +409,7 @@ export function LandingPage() {
 
   useEffect(() => {
     const activeSpecialty = specialties[specialtyIndex];
-    
+
     const handleTyping = () => {
       if (!isSpecialtyDeleting) {
         const nextText = activeSpecialty.substring(0, displayedSpecialty.length + 1);
@@ -470,24 +470,24 @@ export function LandingPage() {
         opacity: 0,
         ease: "power1.inOut"
       }, 0)
-      .to(".showcase-card-1", {
-        y: 0,
-        ease: "power1.inOut"
-      }, 0)
-      .to(".showcase-card-2", {
-        y: 20,
-        ease: "power1.inOut"
-      }, 0);
+        .to(".showcase-card-1", {
+          y: 0,
+          ease: "power1.inOut"
+        }, 0)
+        .to(".showcase-card-2", {
+          y: 20,
+          ease: "power1.inOut"
+        }, 0);
 
       tl.to(".showcase-card-1", {
         yPercent: -105,
         opacity: 0,
         ease: "power1.inOut"
       }, 0.5)
-      .to(".showcase-card-2", {
-        y: 0,
-        ease: "power1.inOut"
-      }, 0.5);
+        .to(".showcase-card-2", {
+          y: 0,
+          ease: "power1.inOut"
+        }, 0.5);
     });
 
     return () => ctx.revert();
@@ -541,13 +541,13 @@ export function LandingPage() {
       <div className="w-full bg-pattern-dark flex flex-col items-center border-t border-[var(--accent-color)]" style={{ backgroundColor: 'var(--bg-color)' }}>
         <section className="w-full max-w-7xl px-6 py-20 z-10 font-mono">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Left Column */}
             <div className="lg:col-span-5 flex flex-col gap-6 items-center lg:items-start">
               <div className="profile-image-placeholder">
-                <img 
-                  src="/profile.webp" 
-                  alt="Moch Mizan Ghodafail" 
+                <img
+                  src="/profile.webp"
+                  alt="Moch Mizan Ghodafail"
                   width={280}
                   height={350}
                   className="profile-image-actual"
@@ -559,7 +559,7 @@ export function LandingPage() {
                   Portrait of Me
                 </h2>
                 <div className="border-t border-[var(--accent-color)] w-full py-0.5" />
-                
+
                 <div className="font-mono text-[11px] uppercase tracking-wider h-6 flex items-center justify-center lg:justify-start" style={{ color: 'var(--accent-color)' }}>
                   <span>&gt; {displayedSpecialty}</span>
                   <span className="animate-pulse ml-0.5 font-normal">|</span>
@@ -567,25 +567,25 @@ export function LandingPage() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2 text-[10px] font-bold uppercase tracking-wider justify-center lg:justify-start font-mono">
-                <a 
-                  href="https://drive.google.com/file/d/1TFVVgRMZgInLLJQin3piV2WIMlDhJsW1/view?usp=sharing" 
-                  target="_blank" 
+                <a
+                  href="https://drive.google.com/file/d/1TFVVgRMZgInLLJQin3piV2WIMlDhJsW1/view?usp=sharing"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="psyche-btn text-[10px] font-bold px-3 py-1.5"
                 >
                   [ DOWNLOAD CV ]
                 </a>
-                <a 
-                  href="https://github.com/mochmizan" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/mochmizan"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="psyche-btn text-[10px] font-bold px-3 py-1.5"
                 >
                   [ GITHUB ]
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/mochmizanghodafail/" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/in/mochmizanghodafail/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="psyche-btn text-[10px] font-bold px-3 py-1.5"
                 >
@@ -632,7 +632,7 @@ export function LandingPage() {
             <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Skills & Technologies
             </h3>
-            
+
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 pt-4">
               {[0, 2, 1, 3].map((idx) => {
                 const category = stackCategories[idx];
@@ -643,12 +643,12 @@ export function LandingPage() {
                     </p>
                     <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-mono">
                       {category.items.map((item, itemIdx) => (
-                        <div 
+                        <div
                           key={itemIdx}
                           className="flex items-center gap-2 group/tag cursor-default"
                         >
-                          <img 
-                            src={item.icon} 
+                          <img
+                            src={item.icon}
                             alt={item.name}
                             width={32}
                             height={32}
@@ -679,19 +679,19 @@ export function LandingPage() {
           <div className="flex-1 flex items-center justify-center w-full max-w-4xl mx-auto relative my-4">
             <ul className="relative w-full h-[60vh] md:h-[65vh] list-none p-0 flex items-center justify-center">
               {projects.map((project, idx) => (
-                <li 
+                <li
                   key={idx}
                   className={`showcase-card showcase-card-${idx} absolute top-0 left-0 w-full h-full border border-[var(--panel-border-color)] hover:border-[var(--accent-color)] transition-[border-color,transform] duration-500 rounded-none bg-cover bg-center grayscale hover:grayscale-0 flex flex-col justify-end`}
-                  style={{ 
+                  style={{
                     backgroundImage: `url(${project.image})`,
                     zIndex: 10 + (projects.length - idx),
                     transform: `translateY(${idx * 20}px)`
                   }}
                 >
                   <div className="absolute inset-0 bg-black/60 transition-colors duration-300 pointer-events-none z-0" />
-                  
-                  <div 
-                    className="absolute inset-0 pointer-events-none z-10" 
+
+                  <div
+                    className="absolute inset-0 pointer-events-none z-10"
                     style={{
                       background: 'repeating-linear-gradient(rgba(18, 16, 16, 0) 0px, rgba(18, 16, 16, 0) 1px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 3px)',
                       mixBlendMode: 'overlay'
@@ -728,7 +728,7 @@ export function LandingPage() {
 
                       <div className="flex flex-wrap gap-1.5 font-mono">
                         {project.tags.map((tag, tagIdx) => (
-                          <span 
+                          <span
                             key={tagIdx}
                             className="px-2 py-0.5 text-[16px] max-lg:text-[10px] font-bold tracking-wider bg-[var(--panel-bg-darker)] text-[var(--accent-color)] border border-[var(--border-muted)]"
                           >
@@ -844,29 +844,29 @@ export function LandingPage() {
             <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Certifications
             </h3>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 pt-4">
               {(showAllCertifications ? certifications : certifications.slice(0, 4)).map((cert, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="relative flex items-start border rounded-none overflow-hidden group p-4 md:p-5"
                   style={{ backgroundColor: 'var(--panel-bg)', borderColor: 'var(--panel-border-color)' }}
                 >
-                  <a 
+                  <a
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 overflow-hidden relative bg-neutral-900 flex items-center justify-center"
                   >
-                    <img 
-                      src={cert.logo} 
-                      alt={`${cert.issuer} Logo`} 
+                    <img
+                      src={cert.logo}
+                      alt={`${cert.issuer} Logo`}
                       width={56}
                       height={56}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </a>
-                  
+
                   <div className="flex-1 pl-4 flex flex-col gap-1 min-w-0">
                     <h4 className="text-[16px] max-lg:text-[14px] font-medium lg:font-semibold leading-tight font-mono text-white">
                       {cert.title}
@@ -885,7 +885,7 @@ export function LandingPage() {
                         <div className="w-full h-full" />
                       )}
                       <div className="absolute right-0 top-0 bottom-0 flex items-center bg-[var(--panel-bg)] pl-2 z-10 select-none whitespace-nowrap">
-                        <div 
+                        <div
                           className="absolute left-0 top-0 bottom-0 w-24 -translate-x-full pointer-events-none"
                           style={{ background: 'linear-gradient(to right, transparent 0%, var(--panel-bg) 70%)' }}
                         />
@@ -919,24 +919,24 @@ export function LandingPage() {
             <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-none text-white">
               Lets Connect<span style={{ color: 'var(--accent-color)' }}>!</span>
             </h3>
-            
+
             <div className="flex gap-4 items-center">
-              <a 
-                href="https://www.linkedin.com/in/mochmizanghodafail/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/in/mochmizanghodafail/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="transition-transform duration-300 hover:scale-110"
                 style={{ color: 'var(--accent-color)' }}
               >
                 <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
               </a>
-              <a 
-                href="https://github.com/mochmizan" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/mochmizan"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="transition-transform duration-300 hover:scale-110"
                 style={{ color: 'var(--accent-color)' }}
