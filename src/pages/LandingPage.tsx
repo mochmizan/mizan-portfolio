@@ -255,6 +255,7 @@ export function LandingPage() {
   const [displayedSpecialty, setDisplayedSpecialty] = useState('');
   const [isSpecialtyDeleting, setIsSpecialtyDeleting] = useState(false);
   const [specialtyTypingSpeed, setSpecialtyTypingSpeed] = useState(100);
+  const [globeSize, setGlobeSize] = useState(600);
 
   const [expandedAwards, setExpandedAwards] = useState<Set<number>>(new Set());
   const [expandedExps, setExpandedExps] = useState<Set<number>>(new Set());
@@ -332,6 +333,21 @@ export function LandingPage() {
   }, [displayedSpecialty, isSpecialtyDeleting, specialtyIndex, specialtyTypingSpeed]);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setGlobeSize(320); // Scale down on mobile (standard 320px)
+      } else if (window.innerWidth < 1024) {
+        setGlobeSize(480); // Scale down on tablet
+      } else {
+        setGlobeSize(600); // Default desktop size
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -393,7 +409,7 @@ export function LandingPage() {
         />
 
         <div className="absolute z-0 animate-fade-in" style={{ animationDuration: '2s' }}>
-          <RetroGlobe size={600} interactive={true} />
+          <RetroGlobe size={globeSize} interactive={true} />
         </div>
 
         <div className="relative z-10 text-center flex flex-col items-center gap-4 max-w-md px-6 select-none pointer-events-auto">
