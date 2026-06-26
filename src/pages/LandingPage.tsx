@@ -925,7 +925,7 @@ export function LandingPage() {
             </div>
 
             {certifications.length > 4 && (
-              <div className="flex justify-center mt-10">
+              <div className="flex justify-center mt-16">
                 <button
                   onClick={() => setShowAllCertifications(prev => !prev)}
                   className="psyche-btn text-[10px] font-bold py-2 w-full max-w-[280px]"
