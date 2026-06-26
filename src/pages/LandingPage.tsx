@@ -846,10 +846,10 @@ export function LandingPage() {
               </div>
 
               {experiences.length > 3 && (
-                <div className="flex justify-start mt-4">
+                <div className="flex justify-center mt-6">
                   <button
                     onClick={() => setShowAllExperiences(prev => !prev)}
-                    className="psyche-btn text-[10px] font-bold px-3 py-1.5"
+                    className="psyche-btn text-[10px] font-bold py-2 w-full max-w-[280px]"
                   >
                     {showAllExperiences ? '[ SHOW LESS ]' : '[ SHOW MORE ]'}
                   </button>
@@ -925,10 +925,10 @@ export function LandingPage() {
             </div>
 
             {certifications.length > 4 && (
-              <div className="flex justify-start mt-8">
+              <div className="flex justify-center mt-10">
                 <button
                   onClick={() => setShowAllCertifications(prev => !prev)}
-                  className="psyche-btn text-[10px] font-bold px-3 py-1.5"
+                  className="psyche-btn text-[10px] font-bold py-2 w-full max-w-[280px]"
                 >
                   {showAllCertifications ? '[ SHOW LESS ]' : '[ SHOW MORE ]'}
                 </button>
