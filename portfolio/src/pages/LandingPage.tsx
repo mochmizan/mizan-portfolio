@@ -75,7 +75,7 @@ const stackCategories: StackCategory[] = [
       { name: 'React', icon: 'https://cdn.simpleicons.org/react' },
       { name: 'Nuxt.js', icon: 'https://cdn.simpleicons.org/nuxt' },
       { name: 'Pandas', icon: 'https://cdn.simpleicons.org/pandas' },
-      { name: 'NumPy', icon: 'https://cdn.simpleicons.org/numpy' },
+      { name: 'NumPy', icon: 'https://www.svgrepo.com/show/373938/numpy.svg' },
       { name: 'Matplotlib', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg' },
       { name: 'Seaborn', icon: 'https://raw.githubusercontent.com/seaborn/seaborn.pydata.org/main/_images/logo-mark-lightbg.svg' },
       { name: 'Scikit-Learn', icon: 'https://cdn.simpleicons.org/scikit-learn' },
