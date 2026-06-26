@@ -898,12 +898,23 @@ export function LandingPage() {
                     <p className="text-[14px] max-lg:text-[12px] font-medium font-mono" style={{ color: 'var(--accent-color)' }}>
                       {cert.issuer}
                     </p>
-                    <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 w-full">
-                      <span>{cert.credentialId ? `Cred ID ${cert.credentialId}` : ''}</span>
-                      <span>
+                    <div className="text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-1 space-y-0.5 w-full">
+                      {cert.credentialId && (
+                        <div 
+                          className="whitespace-nowrap overflow-hidden select-all cursor-text" 
+                          style={{
+                            maskImage: 'linear-gradient(to right, black 80%, transparent 98%)',
+                            WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 98%)'
+                          }}
+                          title={cert.credentialId}
+                        >
+                          Cred ID {cert.credentialId}
+                        </div>
+                      )}
+                      <div className="opacity-80">
                         {cert.issueDate}
                         {cert.expiryDate ? ` · ${cert.expiryDate}` : ''}
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
