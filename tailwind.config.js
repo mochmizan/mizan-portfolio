@@ -7,9 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'prompt': ['Prompt', 'sans-serif'],
-        'roboto': ['"Roboto Mono"', 'monospace'],
-        'merriweather': ['Merriweather', 'serif'],
+        sans: ['"Roboto Mono"', 'monospace'],
+        mono: ['"Roboto Mono"', 'monospace'],
       }
     },
   },

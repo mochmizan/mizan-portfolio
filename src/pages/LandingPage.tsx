@@ -376,7 +376,7 @@ export function LandingPage() {
     <div className="w-full min-h-screen text-[#fcfdfc] overflow-y-auto scroll-smooth flex flex-col items-center" style={{ backgroundColor: 'var(--bg-color)' }}>
       <header className="absolute top-0 left-0 w-full px-6 py-4 flex items-center justify-between z-20 select-none">
         <div className="flex items-center gap-2">
-          <span className="font-prompt font-extrabold text-2xl lowercase tracking-normal text-white">mizan-web</span>
+          <span className="font-mono font-extrabold text-2xl lowercase tracking-normal text-white">mizan-web</span>
         </div>
       </header>
 
@@ -397,7 +397,7 @@ export function LandingPage() {
         </div>
 
         <div className="relative z-10 text-center flex flex-col items-center gap-4 max-w-md px-6 select-none pointer-events-auto">
-          <div className="space-y-1 font-prompt text-white">
+          <div className="space-y-1 font-mono text-white">
             <p className="text-xl font-normal opacity-90 tracking-wide">
               Hi! I’am
             </p>
@@ -408,7 +408,7 @@ export function LandingPage() {
 
           <div className="h-12 flex items-center justify-center">
             <div
-              className="bg-[var(--accent-color)] text-[var(--accent-text)] px-5 py-2.5 font-prompt text-sm uppercase tracking-wider font-bold shadow-md min-w-[240px] text-center"
+              className="bg-[var(--accent-color)] text-[var(--accent-text)] px-5 py-2.5 font-mono text-sm uppercase tracking-wider font-bold shadow-md min-w-[240px] text-center"
             >
               {displayedText}<span className="animate-pulse font-normal">|</span>
             </div>
@@ -418,7 +418,7 @@ export function LandingPage() {
 
       {/* About Section & Footer Wrapper */}
       <div className="w-full bg-pattern-dark flex flex-col items-center border-t border-[var(--accent-color)]" style={{ backgroundColor: 'var(--bg-color)' }}>
-        <section className="w-full max-w-7xl px-6 py-20 z-10 font-prompt">
+        <section className="w-full max-w-7xl px-6 py-20 z-10 font-mono">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column */}
@@ -433,7 +433,7 @@ export function LandingPage() {
                 />
               </div>
 
-              <div className="space-y-3 w-full text-center lg:text-left font-prompt">
+              <div className="space-y-3 w-full text-center lg:text-left font-mono">
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-none text-wrap-balance">
                   Portrait of Me
                 </h2>
@@ -445,7 +445,7 @@ export function LandingPage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-2 text-[10px] font-bold uppercase tracking-wider justify-center lg:justify-start font-prompt">
+              <div className="flex flex-wrap gap-3 pt-2 text-[10px] font-bold uppercase tracking-wider justify-center lg:justify-start font-mono">
                 <a 
                   href="#resume" 
                   className="psyche-btn text-[10px] font-bold px-3 py-1.5"
@@ -473,13 +473,13 @@ export function LandingPage() {
 
             {/* Right Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
+              <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
                 // 01. About Me
               </h2>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-roboto text-[24px] max-md:text-[19px] text-wrap-balance">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
                 About
               </h3>
-              <div className="leading-relaxed text-white font-normal space-y-4 text-justify font-roboto text-[15px] lg:text-[16px]">
+              <div className="leading-relaxed text-white font-normal space-y-4 text-justify font-mono text-[15px] lg:text-[16px]">
                 <p>
                   I didn’t plan to end up in <strong className="font-semibold text-white">AI</strong>. I started out as a <strong className="font-semibold text-white">networking kid</strong> who just wanted to understand how the internet worked. But somewhere between configuring routers and writing my first Python script, I got completely hooked on the idea of <strong className="font-semibold text-white">building systems that actually think</strong>. Now I’m doing both, and I wouldn’t have it any other way.
                 </p>
@@ -501,12 +501,12 @@ export function LandingPage() {
         </section>
 
         {/* Tech Stack Section */}
-        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-roboto">
+        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-mono">
           <div className="space-y-6">
-            <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
+            <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 02. Tech Stack
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-roboto text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
               Skills & Technologies
             </h3>
             
@@ -514,10 +514,10 @@ export function LandingPage() {
               <div className="w-full md:w-1/2 flex flex-col gap-8">
                 {stackCategories.slice(0, 2).map((category, catIdx) => (
                   <div key={catIdx} className="flex flex-col gap-3">
-                    <p className="font-roboto text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
+                    <p className="font-mono text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
                       {category.title}
                     </p>
-                    <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-roboto">
+                    <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-mono">
                       {category.items.map((item, itemIdx) => (
                         <div 
                           key={itemIdx}
@@ -530,7 +530,7 @@ export function LandingPage() {
                             height={32}
                             className="w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain"
                           />
-                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
+                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-mono">{item.name}</span>
                         </div>
                       ))}
                     </div>
@@ -541,10 +541,10 @@ export function LandingPage() {
               <div className="w-full md:w-1/2 flex flex-col gap-8">
                 {stackCategories.slice(2, 4).map((category, catIdx) => (
                   <div key={catIdx + 2} className="flex flex-col gap-3">
-                    <p className="font-roboto text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
+                    <p className="font-mono text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
                       {category.title}
                     </p>
-                    <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-roboto">
+                    <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-mono">
                       {category.items.map((item, itemIdx) => (
                         <div 
                           key={itemIdx}
@@ -557,7 +557,7 @@ export function LandingPage() {
                             height={32}
                             className="w-8 h-8 max-lg:w-6 max-lg:h-6 object-contain"
                           />
-                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
+                          <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-mono">{item.name}</span>
                         </div>
                       ))}
                     </div>
@@ -569,12 +569,12 @@ export function LandingPage() {
         </section>
 
         {/* Featured Projects */}
-        <section className="cards-trigger-container w-full h-screen relative flex flex-col justify-between py-12 px-6 md:px-12 z-10 font-prompt select-none overflow-hidden">
+        <section className="cards-trigger-container w-full h-screen relative flex flex-col justify-between py-12 px-6 md:px-12 z-10 font-mono select-none overflow-hidden">
           <div className="space-y-2 w-full max-w-7xl mx-auto">
-            <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
+            <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 03. Featured Projects
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-roboto text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
               Project Showcase
             </h3>
           </div>
@@ -601,14 +601,14 @@ export function LandingPage() {
                     }}
                   />
                   <div className="relative flex flex-col justify-between items-start z-20 h-full p-8 text-white select-none w-full">
-                    <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-prompt text-white tracking-normal font-bold">
+                    <div className="flex w-full justify-between items-center text-[20px] max-lg:text-[14px] font-mono text-white tracking-normal font-bold">
                       <span>{idx === 0 ? "AI & Fullstack Developer" : idx === 1 ? "Frontend Developer" : "Solo Developer"}</span>
                       <span className="font-normal">{idx === 0 ? "Jan 2026 - Feb 2026" : idx === 1 ? "Nov 2025 - Dec 2025" : "May 2024 - June 2024"}</span>
                     </div>
 
                     <div className="flex flex-col w-full gap-2 mt-auto">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
-                        <h4 className="text-[24px] max-lg:text-[18px] font-semibold tracking-tight text-white leading-tight font-prompt font-bold">
+                        <h4 className="text-[24px] max-lg:text-[18px] font-semibold tracking-tight text-white leading-tight font-mono font-bold">
                           {project.title}
                         </h4>
                         {project.url && (
@@ -616,20 +616,20 @@ export function LandingPage() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="psyche-btn text-xs font-bold px-4 py-1.5 tracking-wider self-start sm:self-auto font-prompt"
+                            className="psyche-btn text-xs font-bold px-4 py-1.5 tracking-wider self-start sm:self-auto font-mono"
                           >
                             View Project &rarr;
                           </a>
                         )}
                       </div>
 
-                      <p className="text-[15px] max-lg:text-[14px] text-gray-300 font-light leading-relaxed max-w-3xl text-justify font-prompt">
+                      <p className="text-[15px] max-lg:text-[14px] text-gray-300 font-light leading-relaxed max-w-3xl text-justify font-mono">
                         {project.description}
                       </p>
 
                       <hr className="w-full border-t border-[var(--border-muted)] opacity-50 my-1" />
 
-                      <div className="flex flex-wrap gap-1.5 font-prompt">
+                      <div className="flex flex-wrap gap-1.5 font-mono">
                         {project.tags.map((tag, tagIdx) => (
                           <span 
                             key={tagIdx}
@@ -648,17 +648,17 @@ export function LandingPage() {
         </section>
 
         {/* Experience Section */}
-        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-roboto">
+        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-mono">
           <div className="space-y-6">
-            <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
+            <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 04. Experience
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-roboto text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
               Experience
             </h3>
 
             <div className="flex flex-col gap-0 pt-4">
-              <h4 className="text-[16px] font-medium lg:font-semibold font-roboto mb-2" style={{ color: 'var(--accent-color)' }}>
+              <h4 className="text-[16px] font-medium lg:font-semibold font-mono mb-2" style={{ color: 'var(--accent-color)' }}>
                 Honors &amp; Awards
               </h4>
               <div className="flex flex-col">
@@ -670,16 +670,16 @@ export function LandingPage() {
                         onClick={() => toggleAward(idx)}
                         className="w-full flex items-start gap-2 text-left group"
                       >
-                        <span className="flex-1 text-[14px] max-lg:text-[13px] font-semibold text-white font-roboto leading-snug">
+                        <span className="flex-1 text-[14px] max-lg:text-[13px] font-semibold text-white font-mono leading-snug">
                           {award.title} <span className="font-light text-[12px]" style={{ color: 'var(--accent-color)' }}>({award.date})</span> <span className="font-light text-[13px]" style={{ color: 'var(--accent-color)' }}>{open ? '[-]' : '[+]'}</span>
                         </span>
                       </button>
                       {open && (
                         <div className="mt-2 flex flex-col gap-1">
-                          <p className="text-[12px] max-lg:text-[11px] font-roboto font-light" style={{ color: 'var(--accent-color)' }}>
+                          <p className="text-[12px] max-lg:text-[11px] font-mono font-light" style={{ color: 'var(--accent-color)' }}>
                             {award.issuer}
                           </p>
-                          <p className="text-[13px] max-lg:text-[12px] font-roboto font-light text-white leading-relaxed">
+                          <p className="text-[13px] max-lg:text-[12px] font-mono font-light text-white leading-relaxed">
                             {award.description}
                           </p>
                         </div>
@@ -689,7 +689,7 @@ export function LandingPage() {
                 })}
               </div>
 
-              <h4 className="text-[16px] font-medium lg:font-semibold font-roboto mt-8 mb-2" style={{ color: 'var(--accent-color)' }}>
+              <h4 className="text-[16px] font-medium lg:font-semibold font-mono mt-8 mb-2" style={{ color: 'var(--accent-color)' }}>
                 Experience Ledger
               </h4>
               <div className="flex flex-col">
@@ -701,18 +701,18 @@ export function LandingPage() {
                         onClick={() => toggleExp(idx)}
                         className="w-full flex items-start gap-2 text-left group"
                       >
-                        <span className="flex-1 text-[14px] max-lg:text-[13px] font-semibold text-white font-roboto leading-snug">
+                        <span className="flex-1 text-[14px] max-lg:text-[13px] font-semibold text-white font-mono leading-snug">
                           {exp.title} <span className="font-light text-[12px]" style={{ color: 'var(--accent-color)' }}>({exp.period})</span> <span className="font-light text-[13px]" style={{ color: 'var(--accent-color)' }}>{open ? '[-]' : '[+]'}</span>
                         </span>
                       </button>
                       {open && (
                         <div className="mt-2 flex flex-col gap-1.5">
-                          <p className="text-[12px] max-lg:text-[11px] font-roboto font-light" style={{ color: 'var(--accent-color)' }}>
+                          <p className="text-[12px] max-lg:text-[11px] font-mono font-light" style={{ color: 'var(--accent-color)' }}>
                             {exp.org}
                           </p>
                           <ul className="flex flex-col gap-0.5">
                             {exp.bullets.map((bullet, bIdx) => (
-                              <li key={bIdx} className="text-[13px] max-lg:text-[12px] font-roboto font-light text-white leading-relaxed pl-3 relative before:content-['•'] before:absolute before:left-0 before:text-white/40">
+                              <li key={bIdx} className="text-[13px] max-lg:text-[12px] font-mono font-light text-white leading-relaxed pl-3 relative before:content-['•'] before:absolute before:left-0 before:text-white/40">
                                 {bullet}
                               </li>
                             ))}
@@ -728,12 +728,12 @@ export function LandingPage() {
         </section>
 
         {/* Licenses & Certifications Section */}
-        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-roboto">
+        <section className="w-full max-w-7xl px-6 pb-20 z-10 font-mono">
           <div className="space-y-6">
-            <h2 className="text-[11px] uppercase tracking-widest font-roboto" style={{ color: 'var(--accent-color)' }}>
+            <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 05. Licenses & Certifications
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-roboto text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
               Certifications
             </h3>
             
@@ -760,13 +760,13 @@ export function LandingPage() {
                   </a>
                   
                   <div className="flex-1 pl-4 flex flex-col gap-1">
-                    <h4 className="text-[16px] max-lg:text-[14px] font-medium lg:font-semibold leading-tight font-roboto text-white">
+                    <h4 className="text-[16px] max-lg:text-[14px] font-medium lg:font-semibold leading-tight font-mono text-white">
                       {cert.title}
                     </h4>
-                    <p className="text-[14px] max-lg:text-[12px] font-medium font-roboto" style={{ color: 'var(--accent-color)' }}>
+                    <p className="text-[14px] max-lg:text-[12px] font-medium font-mono" style={{ color: 'var(--accent-color)' }}>
                       {cert.issuer}
                     </p>
-                    <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-roboto mt-0.5 w-full">
+                    <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 w-full">
                       <span>Cred ID {cert.credentialId}</span>
                       <span>{cert.issueDate}</span>
                     </div>
@@ -780,7 +780,7 @@ export function LandingPage() {
         {/* Footer */}
         <footer className="w-full py-16 flex items-center justify-center relative overflow-hidden">
           <div className="z-10 select-none flex flex-row items-center justify-center gap-6">
-            <h3 className="font-roboto font-bold text-[24px] max-md:text-[19px] tracking-tight leading-none text-white">
+            <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-none text-white">
               Lets Connect<span style={{ color: 'var(--accent-color)' }}>!</span>
             </h3>
             
