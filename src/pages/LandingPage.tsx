@@ -910,8 +910,8 @@ export function LandingPage() {
                       )}
                       <div className="absolute right-0 top-0 bottom-0 flex items-center bg-[var(--panel-bg)] pl-2 z-10 select-none whitespace-nowrap">
                         <div 
-                          className="absolute left-0 top-0 bottom-0 w-16 -translate-x-full pointer-events-none"
-                          style={{ background: 'linear-gradient(to right, transparent 0%, var(--panel-bg) 60%)' }}
+                          className="absolute left-0 top-0 bottom-0 w-24 -translate-x-full pointer-events-none"
+                          style={{ background: 'linear-gradient(to right, transparent 0%, var(--panel-bg) 70%)' }}
                         />
                         <span className="leading-5">
                           {cert.issueDate}
