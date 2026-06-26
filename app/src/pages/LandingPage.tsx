@@ -101,7 +101,52 @@ const stackCategories: StackCategory[] = [
   }
 ];
 
+interface Certification {
+  title: string;
+  issuer: string;
+  issueDate: string;
+  expiryDate: string;
+  credentialId: string;
+  url: string;
+}
+
+const certifications: Certification[] = [
+  {
+    title: 'Membangun Sistem Machine Learning',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'May 2026',
+    expiryDate: 'May 2029',
+    credentialId: 'JMZVOJ723XN9',
+    url: '#'
+  },
+  {
+    title: 'Belajar Fundamental Deep Learning',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'May 2026',
+    expiryDate: 'May 2029',
+    credentialId: 'KEXLQJ64WPG2',
+    url: '#'
+  },
+  {
+    title: 'Belajar Machine Learning untuk Pemula',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'Apr 2026',
+    expiryDate: 'Apr 2029',
+    credentialId: '1RXYW1JEKZVM',
+    url: '#'
+  },
+  {
+    title: 'Belajar Dasar Git dengan GitHub',
+    issuer: 'Dicoding Indonesia',
+    issueDate: 'Feb 2026',
+    expiryDate: 'Feb 2029',
+    credentialId: '81P25E93NPOY',
+    url: '#'
+  }
+];
+
 export function LandingPage({ onEnter }: LandingPageProps) {
+  void certifications;
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
