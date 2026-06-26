@@ -847,17 +847,16 @@ export function LandingPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 pt-4">
               {(showAllCertifications ? certifications : certifications.slice(0, 4)).map((cert, idx) => (
-                <div
+                <a
                   key={idx}
-                  className="relative flex items-start border rounded-none overflow-hidden group p-4 md:p-5"
+                  href={cert.url}
+                  target={cert.url !== '#' ? "_blank" : undefined}
+                  rel={cert.url !== '#' ? "noopener noreferrer" : undefined}
+                  onClick={(e) => { if (cert.url === '#') e.preventDefault(); }}
+                  className={`relative flex items-start border rounded-none overflow-hidden group p-4 md:p-5 transition-colors duration-300 ${cert.url !== '#' ? 'hover:border-[var(--accent-color)] cursor-pointer' : 'cursor-default'}`}
                   style={{ backgroundColor: 'var(--panel-bg)', borderColor: 'var(--panel-border-color)' }}
                 >
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 overflow-hidden relative bg-neutral-900 flex items-center justify-center"
-                  >
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 overflow-hidden relative bg-neutral-900 flex items-center justify-center">
                     <img
                       src={cert.logo}
                       alt={`${cert.issuer} Logo`}
@@ -865,7 +864,7 @@ export function LandingPage() {
                       height={56}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                  </a>
+                  </div>
 
                   <div className="flex-1 pl-4 flex flex-col gap-1 min-w-0">
                     <h4 className="text-[16px] max-lg:text-[14px] font-medium lg:font-semibold leading-tight font-mono text-white">
@@ -896,7 +895,7 @@ export function LandingPage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
