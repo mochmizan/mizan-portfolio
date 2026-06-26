@@ -891,31 +891,33 @@ export function LandingPage() {
                     />
                   </a>
                   
-                  <div className="flex-1 pl-4 flex flex-col gap-1">
+                  <div className="flex-1 pl-4 flex flex-col gap-1 min-w-0">
                     <h4 className="text-[16px] max-lg:text-[14px] font-medium lg:font-semibold leading-tight font-mono text-white">
                       {cert.title}
                     </h4>
                     <p className="text-[14px] max-lg:text-[12px] font-medium font-mono" style={{ color: 'var(--accent-color)' }}>
                       {cert.issuer}
                     </p>
-                    <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 w-full gap-4">
+                    <div className="relative w-full h-5 text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 overflow-hidden">
                       {cert.credentialId ? (
-                        <div className="relative overflow-hidden whitespace-nowrap flex-1 max-w-[50%] sm:max-w-[55%] pr-6">
-                          <span className="block overflow-hidden whitespace-nowrap" title={cert.credentialId}>
+                        <div className="w-full overflow-hidden whitespace-nowrap">
+                          <span className="block overflow-hidden whitespace-nowrap leading-5" title={cert.credentialId}>
                             Cred ID {cert.credentialId}
                           </span>
-                          <div 
-                            className="absolute right-0 top-0 bottom-0 w-6 pointer-events-none"
-                            style={{ background: 'linear-gradient(to right, transparent, var(--panel-bg))' }}
-                          />
                         </div>
                       ) : (
-                        <div className="flex-1" />
+                        <div className="w-full h-full" />
                       )}
-                      <span className="shrink-0 whitespace-nowrap">
-                        {cert.issueDate}
-                        {cert.expiryDate ? ` · ${cert.expiryDate}` : ''}
-                      </span>
+                      <div className="absolute right-0 top-0 bottom-0 flex items-center bg-[var(--panel-bg)] pl-2 z-10 select-none whitespace-nowrap">
+                        <div 
+                          className="absolute left-0 top-0 bottom-0 w-8 -translate-x-full pointer-events-none"
+                          style={{ background: 'linear-gradient(to right, transparent, var(--panel-bg))' }}
+                        />
+                        <span className="leading-5">
+                          {cert.issueDate}
+                          {cert.expiryDate ? ` · ${cert.expiryDate}` : ''}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
