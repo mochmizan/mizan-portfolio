@@ -123,7 +123,7 @@ const certifications: Certification[] = [
     expiryDate: 'May 2029',
     credentialId: 'JMZVOJ723XN9',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/JMZVOJ723XN9'
   },
   {
     title: 'Belajar Fundamental Deep Learning',
@@ -132,7 +132,7 @@ const certifications: Certification[] = [
     expiryDate: 'May 2029',
     credentialId: 'KEXLQJ64WPG2',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/KEXLQJ64WPG2'
   },
   {
     title: 'Belajar Machine Learning untuk Pemula',
@@ -141,7 +141,7 @@ const certifications: Certification[] = [
     expiryDate: 'Apr 2029',
     credentialId: '1RXYW1JEKZVM',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/1RXYW1JEKZVM'
   },
   {
     title: 'Belajar Dasar Git dengan GitHub',
@@ -150,7 +150,7 @@ const certifications: Certification[] = [
     expiryDate: 'Feb 2029',
     credentialId: '81P25E93NPOY',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/81P25E93NPOY'
   },
   {
     title: 'Career Management Essentials',
@@ -166,7 +166,7 @@ const certifications: Certification[] = [
     expiryDate: 'Nov 2028',
     credentialId: '4EXG313VDZRL',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/4EXG313VDZRL'
   },
   {
     title: 'Belajar Dasar AI',
@@ -175,7 +175,7 @@ const certifications: Certification[] = [
     expiryDate: 'Oct 2028',
     credentialId: 'KEXL228G0ZG2',
     logo: '/images/dicoding.webp',
-    url: '#'
+    url: 'https://www.dicoding.com/certificates/KEXL228G0ZG2'
   },
   {
     title: 'CCNA: Switching, Routing, and Wireless Essentials',
