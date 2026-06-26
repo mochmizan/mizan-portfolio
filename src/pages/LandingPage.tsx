@@ -308,16 +308,16 @@ export function LandingPage() {
       if (!isSpecialtyDeleting) {
         const nextText = activeSpecialty.substring(0, displayedSpecialty.length + 1);
         setDisplayedSpecialty(nextText);
-        setTypingSpeed(80);
+        setSpecialtyTypingSpeed(80);
 
         if (nextText === activeSpecialty) {
-          setTypingSpeed(2500);
+          setSpecialtyTypingSpeed(2500);
           setIsSpecialtyDeleting(true);
         }
       } else {
         const nextText = activeSpecialty.substring(0, displayedSpecialty.length - 1);
         setDisplayedSpecialty(nextText);
-        setTypingSpeed(30);
+        setSpecialtyTypingSpeed(30);
 
         if (nextText === '') {
           setIsSpecialtyDeleting(false);
@@ -476,7 +476,7 @@ export function LandingPage() {
               <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
                 // 01. About Me
               </h2>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
+              <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
                 About
               </h3>
               <div className="leading-relaxed text-white font-normal space-y-4 text-justify font-mono text-[15px] lg:text-[16px]">
@@ -506,7 +506,7 @@ export function LandingPage() {
             <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 02. Tech Stack
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Skills & Technologies
             </h3>
             
@@ -574,7 +574,7 @@ export function LandingPage() {
             <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 03. Featured Projects
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Project Showcase
             </h3>
           </div>
@@ -608,7 +608,7 @@ export function LandingPage() {
 
                     <div className="flex flex-col w-full gap-2 mt-auto">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
-                        <h4 className="text-[24px] max-lg:text-[18px] font-semibold tracking-tight text-white leading-tight font-mono font-bold">
+                        <h4 className="font-mono font-bold text-[24px] max-lg:text-[18px] tracking-tight leading-tight text-white">
                           {project.title}
                         </h4>
                         {project.url && (
@@ -653,7 +653,7 @@ export function LandingPage() {
             <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 04. Experience
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Experience
             </h3>
 
@@ -733,7 +733,7 @@ export function LandingPage() {
             <h2 className="text-[11px] uppercase tracking-widest font-mono" style={{ color: 'var(--accent-color)' }}>
               // 05. Licenses & Certifications
             </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight font-mono text-[24px] max-md:text-[19px] text-wrap-balance">
+            <h3 className="font-mono font-bold text-[24px] max-md:text-[19px] tracking-tight leading-tight text-white text-wrap-balance">
               Certifications
             </h3>
             
