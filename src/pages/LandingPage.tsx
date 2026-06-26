@@ -259,6 +259,7 @@ export function LandingPage() {
 
   const [expandedAwards, setExpandedAwards] = useState<Set<number>>(new Set());
   const [expandedExps, setExpandedExps] = useState<Set<number>>(new Set());
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
 
   const toggleAward = (idx: number) => setExpandedAwards(prev => {
     const next = new Set(prev);
@@ -335,7 +336,7 @@ export function LandingPage() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setGlobeSize(380); // Scale down on mobile (was 400px)
+        setGlobeSize(320); // Scale down on mobile (standard 320px)
       } else if (window.innerWidth < 1024) {
         setGlobeSize(480); // Scale down on tablet
       } else {
@@ -709,7 +710,7 @@ export function LandingPage() {
                 Experience Ledger
               </h4>
               <div className="flex flex-col">
-                {experiences.map((exp, idx) => {
+                {(showAllExperiences ? experiences : experiences.slice(0, 3)).map((exp, idx) => {
                   const open = expandedExps.has(idx);
                   return (
                     <div key={idx} className="py-3">
@@ -739,6 +740,17 @@ export function LandingPage() {
                   );
                 })}
               </div>
+
+              {experiences.length > 3 && (
+                <div className="flex justify-start mt-4">
+                  <button
+                    onClick={() => setShowAllExperiences(prev => !prev)}
+                    className="psyche-btn text-[10px] font-bold px-3 py-1.5"
+                  >
+                    {showAllExperiences ? '[ SHOW LESS ]' : '[ SHOW MORE ]'}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </section>
