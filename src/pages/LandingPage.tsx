@@ -898,23 +898,24 @@ export function LandingPage() {
                     <p className="text-[14px] max-lg:text-[12px] font-medium font-mono" style={{ color: 'var(--accent-color)' }}>
                       {cert.issuer}
                     </p>
-                    <div className="text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-1 space-y-0.5 w-full">
-                      {cert.credentialId && (
-                        <div 
-                          className="whitespace-nowrap overflow-hidden select-all cursor-text" 
-                          style={{
-                            maskImage: 'linear-gradient(to right, black 80%, transparent 98%)',
-                            WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 98%)'
-                          }}
-                          title={cert.credentialId}
-                        >
-                          Cred ID {cert.credentialId}
+                    <div className="flex justify-between items-center text-[12px] max-lg:text-[10px] text-white font-light font-mono mt-0.5 w-full gap-4">
+                      {cert.credentialId ? (
+                        <div className="relative overflow-hidden whitespace-nowrap flex-1 max-w-[50%] sm:max-w-[55%] pr-6">
+                          <span className="block overflow-hidden whitespace-nowrap" title={cert.credentialId}>
+                            Cred ID {cert.credentialId}
+                          </span>
+                          <div 
+                            className="absolute right-0 top-0 bottom-0 w-6 pointer-events-none"
+                            style={{ background: 'linear-gradient(to right, transparent, var(--panel-bg))' }}
+                          />
                         </div>
+                      ) : (
+                        <div className="flex-1" />
                       )}
-                      <div className="opacity-80">
+                      <span className="shrink-0 whitespace-nowrap">
                         {cert.issueDate}
                         {cert.expiryDate ? ` · ${cert.expiryDate}` : ''}
-                      </div>
+                      </span>
                     </div>
                   </div>
                 </div>
