@@ -360,7 +360,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
               <div className="w-full md:w-1/2 flex flex-col gap-8">
                 {stackCategories.slice(0, 2).map((category, catIdx) => (
                   <div key={catIdx} className="flex flex-col gap-3">
-                    <p className="font-roboto text-[16px] font-medium lg:font-semibold text-white mb-1">
+                    <p className="font-roboto text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
                       {category.title}
                     </p>
                     <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-roboto">
@@ -372,11 +372,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                           <img 
                             src={item.icon} 
                             alt={item.name}
-                            className={`w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain transition-all duration-200 ${
-                              item.icon.endsWith('.svg') 
-                                ? 'brightness-0 invert opacity-80 group-hover/tag:opacity-100' 
-                                : ''
-                            }`}
+                            className="w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain"
                           />
                           <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
                         </div>
@@ -390,7 +386,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
               <div className="w-full md:w-1/2 flex flex-col gap-8">
                 {stackCategories.slice(2, 4).map((category, catIdx) => (
                   <div key={catIdx + 2} className="flex flex-col gap-3">
-                    <p className="font-roboto text-[16px] font-medium lg:font-semibold text-white mb-1">
+                    <p className="font-roboto text-[16px] font-medium lg:font-semibold mb-1" style={{ color: 'var(--accent-color)' }}>
                       {category.title}
                     </p>
                     <div className="flex justify-start flex-wrap items-center gap-x-6 gap-y-3 font-roboto">
@@ -402,11 +398,7 @@ export function LandingPage({ onEnter }: LandingPageProps) {
                           <img 
                             src={item.icon} 
                             alt={item.name}
-                            className={`w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain transition-all duration-200 ${
-                              item.icon.endsWith('.svg') 
-                                ? 'brightness-0 invert opacity-80 group-hover/tag:opacity-100' 
-                                : ''
-                            }`}
+                            className="w-6 h-6 max-lg:w-5 max-lg:h-5 object-contain"
                           />
                           <span className="text-[14px] max-lg:text-[12px] text-white font-medium font-roboto">{item.name}</span>
                         </div>
