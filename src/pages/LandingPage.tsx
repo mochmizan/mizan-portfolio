@@ -335,7 +335,7 @@ export function LandingPage() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setGlobeSize(320); // Scale down on mobile (standard 320px)
+        setGlobeSize(360); // Scale down on mobile (was 320px)
       } else if (window.innerWidth < 1024) {
         setGlobeSize(480); // Scale down on tablet
       } else {
